@@ -1,3 +1,11 @@
+/*
+================================================================================================
+ Name:          tree_main.c
+ Author:        Dominik Andexer
+ Description:   Binary Search Tree
+================================================================================================
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "tree.h"
@@ -48,7 +56,6 @@ int main(void)
         }
 
     } while(auswahl != 6);
-
 
     return EXIT_SUCCESS;
 }
