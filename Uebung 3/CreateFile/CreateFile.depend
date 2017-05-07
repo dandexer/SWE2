@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1494018629 source:c:\users\dominik\desktop\c\createfile\createfile.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1494170333 source:c:\users\dominik\dropbox\its bachelor\softwareentwicklung\softwareentwicklung 2\forsthofer\3-createfile\createfile.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

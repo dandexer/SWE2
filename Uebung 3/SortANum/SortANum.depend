@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1494013667 source:c:\users\dominik\dropbox\its bachelor\softwareentwicklung\softwareentwicklung 2\forsthofer\3-sortanum\sortanum.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
