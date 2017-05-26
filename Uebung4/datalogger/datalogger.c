@@ -21,12 +21,13 @@ int main()
 int datalogger()
 {
     char buf[MAX];
-    FILE *datei;
-    char *datum, *uhrzeit;
-    float temperatur = 0;
+    FILE *datei = fopen("ogd", "rt");
+    FILE *logfile = fopen("logfile.ini", "at");
 
-    datei = fopen("ogd", "r");
-    if(NULL==datei)
+    char datum[MAX], uhrzeit[MAX];
+    float temp = 0;
+
+    if(NULL==datei || NULL==logfile)
     {
         printf("Datei konnte nicht geoeffnet werden!\n");
         return -1;
@@ -35,10 +36,11 @@ int datalogger()
     while(fgets(buf,MAX,datei) != NULL)
     {
         if(strstr(buf, "Salzburg") != NULL) // Zeile mit Salzburg gefunden
-            fputs(buf, stdout);
+            sscanf(buf,"%*i;\"%*[^\"]\";%*i;\"%[^\"]\";\"%[^\"]\";%f%*[^\n]", &datum, &uhrzeit, &temp);
     }
+    fprintf(logfile, "Temperatur in Salzburg am %s um %s Uhr: %.2f °C\n", datum, uhrzeit, temp);
 
-fclose(datei);
+fclose(datei); fclose(logfile);
 
 return EXIT_SUCCESS;
 }
